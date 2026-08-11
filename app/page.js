@@ -2,9 +2,11 @@ import { supabase } from "@/lib/supabase"
 
 export default async function Home() {
 
-  const { data: products } = await supabase
+  const { data: products, error } = await supabase
     .from("products")
     .select("*")
+
+  console.log(error)
 
   return (
     <main>
@@ -12,19 +14,15 @@ export default async function Home() {
 
       <p>Our Products</p>
 
-      <div>
-        {products?.map((product) => (
-          <div key={product.id}>
+      {error && <p>{error.message}</p>}
 
-            <h2>{product.name}</h2>
-
-            <p>Brand: {product.brand}</p>
-
-            <p>Price: {product.price} MMK</p>
-
-          </div>
-        ))}
-      </div>
+      {products?.map((product) => (
+        <div key={product.id}>
+          <h2>{product.name}</h2>
+          <p>Brand: {product.brand}</p>
+          <p>Price: {product.price} MMK</p>
+        </div>
+      ))}
 
     </main>
   )
