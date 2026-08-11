@@ -1,4 +1,4 @@
-import { supabase } from "../lib/supabase"
+import { supabase } from "@/lib/supabase"
 
 export default async function Home() {
 
@@ -15,12 +15,13 @@ export default async function Home() {
       <div>
         {products?.map((product) => (
           <div key={product.id}>
+
             <h2>{product.name}</h2>
-            <img 
-              src={product.image}
-              width="200"
-              alt={product.name}
-            />
+
+            <p>Brand: {product.brand}</p>
+
+            <p>Price: {product.price} MMK</p>
+
           </div>
         ))}
       </div>
