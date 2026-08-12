@@ -45,10 +45,7 @@ export default async function Home() {
             boxShadow:"0 4px 10px rgba(0,0,0,0.1)"
           }}
         >
-        <img
-            src={product.image}
-            alt={product.name}
-          />
+       
 
   <img
     src={product.image}
