@@ -72,7 +72,21 @@ color:"#e11d48"
 
 </h2>
 
-
+<a
+href={`/product/${product.id}`}
+style={{
+display:"block",
+background:"#111",
+color:"white",
+padding:"12px",
+borderRadius:"10px",
+textAlign:"center",
+textDecoration:"none",
+marginTop:"20px"
+}}
+>
+View Product
+</a>
 
 <p>
 
