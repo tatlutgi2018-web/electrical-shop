@@ -8,22 +8,19 @@ export default async function Home() {
 
 
   return (
-
     <main
       style={{
-        padding:"40px",
-        fontFamily:"Arial, sans-serif",
+        padding:"50px",
         maxWidth:"1200px",
-        margin:"auto"
+        margin:"auto",
+        fontFamily:"Arial, sans-serif"
       }}
     >
-
 
       <h1
         style={{
           fontSize:"42px",
-          marginBottom:"10px",
-          fontWeight:"700"
+          fontWeight:"800"
         }}
       >
         ⚡ Electrical Shop
@@ -32,37 +29,31 @@ export default async function Home() {
 
       <p
         style={{
+          color:"#666",
           fontSize:"18px",
-          color:"#555"
+          marginBottom:"40px"
         }}
       >
         Quality Electrical Products
       </p>
 
 
-
       {error && (
-        <p
-          style={{
-            color:"red"
-          }}
-        >
+        <p style={{color:"red"}}>
           {error.message}
         </p>
       )}
 
 
 
-
       <div
         style={{
           display:"grid",
-          gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",
-          gap:"30px",
-          marginTop:"40px"
+          gridTemplateColumns:
+          "repeat(auto-fit,minmax(300px,1fr))",
+          gap:"30px"
         }}
       >
-
 
 
       {products?.map((product)=>(
@@ -71,45 +62,39 @@ export default async function Home() {
         <div
           key={product.id}
           style={{
-            border:"1px solid #eee",
+            background:"#fff",
             borderRadius:"20px",
             overflow:"hidden",
-            background:"#fff",
-            boxShadow:"0 10px 30px rgba(0,0,0,0.08)"
+            border:"1px solid #eee",
+            boxShadow:
+            "0 15px 40px rgba(0,0,0,0.08)"
           }}
         >
 
 
-
-          {/* PRODUCT IMAGE */}
-
-         <div
-style={{
- height:"260px",
- display:"flex",
- justifyContent:"center",
- alignItems:"center",
- background:"#fafafa",
- padding:"15px"
-}}
->
+          <div
+            style={{
+              height:"300px",
+              background:"#fafafa",
+              display:"flex",
+              justifyContent:"center",
+              alignItems:"center"
+            }}
+          >
 
             <img
               src={product.image}
               alt={product.name}
-            style={{
- width:"75%",
- height:"75%",
- objectFit:"contain"
-}}
+              style={{
+                width:"85%",
+                height:"85%",
+                objectFit:"contain"
+              }}
             />
 
           </div>
 
 
-
-
-          {/* PRODUCT INFO */}
 
           <div
             style={{
@@ -117,22 +102,19 @@ style={{
             }}
           >
 
-
             <h2
               style={{
                 fontSize:"24px",
-                marginBottom:"12px"
+                margin:"0 0 15px"
               }}
             >
               {product.name}
             </h2>
 
 
-
             <p
               style={{
-                color:"#555",
-                fontSize:"16px"
+                color:"#555"
               }}
             >
               Brand: {product.brand}
@@ -140,13 +122,10 @@ style={{
 
 
 
-
             <h3
               style={{
                 color:"#e11d48",
-                fontSize:"26px",
-                marginTop:"15px",
-                marginBottom:"20px"
+                fontSize:"28px"
               }}
             >
               {product.price} MMK
@@ -154,22 +133,20 @@ style={{
 
 
 
-
             <button
               style={{
-                background:"#111",
-                color:"white",
-                padding:"14px",
-                borderRadius:"12px",
-                border:"none",
                 width:"100%",
+                background:"#111",
+                color:"#fff",
+                border:"none",
+                padding:"15px",
+                borderRadius:"12px",
                 fontSize:"16px",
                 cursor:"pointer"
               }}
             >
               View Product
             </button>
-
 
 
           </div>
@@ -181,11 +158,9 @@ style={{
       ))}
 
 
-
       </div>
 
 
     </main>
-
   )
 }
