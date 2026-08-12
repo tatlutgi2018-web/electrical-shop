@@ -77,15 +77,16 @@ export default async function Home() {
 
 
 
-            <img
+          <img
   src={product.image}
   alt={product.name}
   style={{
     width:"100%",
-    height:"300px",
+    height:"260px",
     objectFit:"contain",
     background:"#f8f8f8",
-    padding:"20px"
+    padding:"10px",
+    transform:"scale(1.25)"
   }}
 />
 
