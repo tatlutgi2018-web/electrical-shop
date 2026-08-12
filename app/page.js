@@ -10,13 +10,13 @@ export default async function Home() {
   return (
 
     <main
-      style={{
-        padding:"40px",
-        fontFamily:"Arial",
-        background:"#fafafa",
-        minHeight:"100vh"
-      }}
-    >
+style={{
+ padding:"40px",
+ fontFamily:"Arial",
+ maxWidth:"1200px",
+ margin:"auto"
+}}
+>
 
       <h1
         style={{
@@ -41,15 +41,14 @@ export default async function Home() {
 
 
 
-      <div
-        style={{
-          display:"grid",
-         gridTemplateColumns:"repeat(auto-fit,minmax(300px,350px))",
-justifyContent:"center",
-          gap:"25px",
-          marginTop:"30px"
-        }}
-      >
+     <div
+style={{
+  display:"grid",
+  gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",
+  gap:"25px",
+  marginTop:"30px"
+}}
+>
 
 
 
@@ -57,16 +56,15 @@ justifyContent:"center",
 
 
         <div
-          key={product.id}
-          style={{
-            border:"1px solid #eee",
-            borderRadius:"20px",
-            overflow:"hidden",
-            background:"white",
-            boxShadow:
-            "0 10px 30px rgba(0,0,0,0.08)"
-          }}
-        >
+key={product.id}
+style={{
+ border:"1px solid #eee",
+ borderRadius:"20px",
+ overflow:"hidden",
+ background:"white",
+ boxShadow:"0 10px 30px rgba(0,0,0,0.08)"
+}}
+>
 
 
           <div
@@ -77,25 +75,24 @@ justifyContent:"center",
 
 <div
 style={{
-  height:"280px",
-  background:"#f7f7f7",
-  display:"flex",
-  justifyContent:"center",
-  alignItems:"center",
-  overflow:"hidden"
+ height:"280px",
+ display:"flex",
+ justifyContent:"center",
+ alignItems:"center",
+ background:"#f8f8f8"
 }}
 >
-
 <img
 src={product.image}
 alt={product.name}
 style={{
-  width:"100%",
-  height:"100%",
-  objectFit:"contain",
-  padding:"30px"
+ width:"100%",
+ height:"100%",
+ objectFit:"contain",
+ padding:"20px"
 }}
 />
+</div>
 
 
 
