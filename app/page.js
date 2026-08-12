@@ -100,7 +100,7 @@ export default async function Home() {
 
           style={{
 
-            height:"260px",
+            height:"280px",
             background:"#f5f5f5",
             display:"flex",
             justifyContent:"center",
@@ -119,10 +119,11 @@ export default async function Home() {
 
           style={{
 
-            width:"80%",
-            height:"80%",
-            objectFit:"contain"
-
+            width:"100%",
+height:"100%",
+objectFit:"contain",
+maxWidth:"220px",
+maxHeight:"220px",
           }}
 
           />
