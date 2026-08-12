@@ -45,7 +45,7 @@ export default async function Home() {
         style={{
           display:"grid",
           gridTemplateColumns:
-          "repeat(auto-fit,minmax(250px,1fr))",
+          "repeat(auto-fit,minmax(300px,1fr))",
           gap:"25px",
           marginTop:"30px"
         }}
@@ -78,16 +78,15 @@ export default async function Home() {
 
 
             <img
-              src={product.image}
-              alt={product.name}
-              style={{
-                width:"100%",
-                height:"220px",
-                objectFit:"contain",
-                background:"#f5f5f5",
-                borderRadius:"12px"
-              }}
-            />
+ src={product.image}
+ alt={product.name}
+ style={{
+   width:"100%",
+   height:"250px",
+   objectFit:"cover",
+   borderRadius:"12px"
+ }}
+/>
 
 
 
