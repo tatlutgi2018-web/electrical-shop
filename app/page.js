@@ -172,23 +172,21 @@ style={{
           </h3>
 
 
-
-          <button
-
-          style={{
-
-            width:"100%",
-            padding:"14px",
-            background:"#111",
-            color:"white",
-            border:"none",
-            borderRadius:"10px",
-            fontSize:"16px",
-            cursor:"pointer"
-
-          }}
-
-          >
+<a
+href={`/product/${product.id}`}
+style={{
+  display:"block",
+  background:"#111",
+  color:"white",
+  padding:"12px",
+  borderRadius:"10px",
+  textAlign:"center",
+  textDecoration:"none",
+  width:"100%"
+}}
+>
+View Product
+</a>
 
           View Product
 
