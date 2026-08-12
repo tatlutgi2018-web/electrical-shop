@@ -72,93 +72,110 @@ export default async function Home() {
         >
 
 
-          <div
-            style={{
-              height:"300px",
-              background:"#fafafa",
-              display:"flex",
-              justifyContent:"center",
-              alignItems:"center"
-            }}
-          >
-
-            <img
-              src={product.image}
-              alt={product.name}
-              style={{
-                width:"85%",
-                height:"85%",
-                objectFit:"contain"
-              }}
-            />
-
-          </div>
+        <div
+style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",
+gap:"30px",
+marginTop:"40px"
+}}
+>
 
 
-
-          <div
-            style={{
-              padding:"25px"
-            }}
-          >
-
-            <h2
-              style={{
-                fontSize:"24px",
-                margin:"0 0 15px"
-              }}
-            >
-              {product.name}
-            </h2>
+{products?.map((product)=>(
 
 
-            <p
-              style={{
-                color:"#555"
-              }}
-            >
-              Brand: {product.brand}
-            </p>
+<div
+key={product.id}
+style={{
+background:"white",
+borderRadius:"18px",
+border:"1px solid #eee",
+overflow:"hidden",
+boxShadow:"0 8px 25px rgba(0,0,0,0.08)"
+}}
+>
 
 
+<div
+style={{
+height:"260px",
+background:"#f7f7f7",
+display:"flex",
+alignItems:"center",
+justifyContent:"center"
+}}
+>
 
-            <h3
-              style={{
-                color:"#e11d48",
-                fontSize:"28px"
-              }}
-            >
-              {product.price} MMK
-            </h3>
+<img
+src={product.image}
+alt={product.name}
+style={{
+width:"75%",
+height:"75%",
+objectFit:"contain"
+}}
+/>
+
+</div>
 
 
 
-            <button
-              style={{
-                width:"100%",
-                background:"#111",
-                color:"#fff",
-                border:"none",
-                padding:"15px",
-                borderRadius:"12px",
-                fontSize:"16px",
-                cursor:"pointer"
-              }}
-            >
-              View Product
-            </button>
+<div
+style={{
+padding:"20px"
+}}
+>
+
+<h2
+style={{
+fontSize:"22px",
+marginBottom:"10px"
+}}
+>
+{product.name}
+</h2>
 
 
-          </div>
+<p>
+Brand: {product.brand}
+</p>
 
 
-        </div>
+<h3
+style={{
+color:"#e11d48",
+fontSize:"25px"
+}}
+>
+{product.price} MMK
+</h3>
 
 
-      ))}
+<button
+style={{
+width:"100%",
+padding:"13px",
+background:"#111",
+color:"white",
+border:"none",
+borderRadius:"10px"
+}}
+>
+View Product
+</button>
 
 
-      </div>
+</div>
+
+
+</div>
+
+
+))}
+
+
+</div>
 
 
     </main>
