@@ -1,119 +1,105 @@
 import { supabase } from "../../../lib/supabase"
 
 
-export default async function ProductPage({params}) {
+export default async function ProductPage({ params }) {
+
+  const { id } = params
 
 
-const {data: product} = await supabase
-.from("products")
-.select("*")
-.eq("id", params.id)
-.single()
+  const { data: product, error } = await supabase
+    .from("products")
+    .select("*")
+    .eq("id", id)
+    .single()
 
 
-
-if(!product){
-
-return(
-<div>
-Product not found
-</div>
-)
-
-}
-
-
-
-return(
-
-<main
-style={{
-padding:"40px",
-fontFamily:"Arial"
-}}
->
+  if(error || !product){
+    return (
+      <main
+        style={{
+          padding:"40px",
+          fontFamily:"Arial"
+        }}
+      >
+        <h1>
+          Product not found
+        </h1>
+      </main>
+    )
+  }
 
 
-<img
+  return (
 
-src={product.image}
+    <main
+      style={{
+        padding:"40px",
+        maxWidth:"900px",
+        margin:"auto",
+        fontFamily:"Arial"
+      }}
+    >
 
-style={{
-width:"400px",
-height:"400px",
-objectFit:"contain"
-}}
-
-/>
-
-
-
-<h1>
-
-{product.name}
-
-</h1>
-
-
-<h3>
-
-Brand: {product.brand}
-
-</h3>
+      <div
+        style={{
+          border:"1px solid #eee",
+          borderRadius:"20px",
+          overflow:"hidden",
+          padding:"30px",
+          boxShadow:"0 10px 30px rgba(0,0,0,0.08)"
+        }}
+      >
 
 
-<h2
-style={{
-color:"#e11d48"
-}}
->
-
-{product.price} MMK
-
-</h2>
-
-<a
-href={`/product/${product.id}`}
-style={{
-display:"block",
-background:"#111",
-color:"white",
-padding:"12px",
-borderRadius:"10px",
-textAlign:"center",
-textDecoration:"none",
-marginTop:"20px"
-}}
->
-View Product
-</a>
-
-<p>
-
-{product.description}
-
-</p>
+        <img
+          src={product.image}
+          alt={product.name}
+          style={{
+            width:"100%",
+            height:"400px",
+            objectFit:"contain"
+          }}
+        />
 
 
-
-<button
-style={{
-background:"#111",
-color:"white",
-padding:"15px",
-borderRadius:"10px",
-width:"300px"
-}}
->
-
-Order Now
-
-</button>
+        <h1>
+          {product.name}
+        </h1>
 
 
-</main>
+        <h3>
+          Brand: {product.brand}
+        </h3>
 
 
-)
+        <h2
+          style={{
+            color:"#e11d48"
+          }}
+        >
+          {product.price} MMK
+        </h2>
 
+
+        <button
+          style={{
+            width:"100%",
+            padding:"15px",
+            background:"#111",
+            color:"white",
+            border:"none",
+            borderRadius:"10px",
+            fontSize:"18px"
+          }}
+        >
+          Order Now
+        </button>
+
+
+      </div>
+
+
+    </main>
+
+  )
 }
