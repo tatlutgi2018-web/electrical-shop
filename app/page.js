@@ -64,9 +64,6 @@ export default async function Home() {
   <h2>
     {product.name}
   </h2>
-          <h2>
-            {product.name}
-          </h2>
 
 
           <p>
