@@ -83,25 +83,25 @@ export default async function Home() {
 
           {/* PRODUCT IMAGE */}
 
-          <div
-            style={{
-              height:"220px",
-              display:"flex",
-              justifyContent:"center",
-              alignItems:"center",
-              background:"#f8f8f8",
-              padding:"20px"
-            }}
-          >
+         <div
+style={{
+ height:"260px",
+ display:"flex",
+ justifyContent:"center",
+ alignItems:"center",
+ background:"#fafafa",
+ padding:"15px"
+}}
+>
 
             <img
               src={product.image}
               alt={product.name}
-              style={{
-                width:"90%",
-                height:"90%",
-                objectFit:"contain"
-              }}
+            style={{
+ width:"75%",
+ height:"75%",
+ objectFit:"contain"
+}}
             />
 
           </div>
