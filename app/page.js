@@ -12,45 +12,61 @@ export default async function Home() {
     <main
       style={{
         padding:"40px",
-        fontFamily:"Arial",
+        fontFamily:"Arial, sans-serif",
         maxWidth:"1200px",
         margin:"auto"
       }}
     >
 
+
       <h1
         style={{
-          fontSize:"40px",
-          marginBottom:"10px"
+          fontSize:"42px",
+          marginBottom:"10px",
+          fontWeight:"700"
         }}
       >
         ⚡ Electrical Shop
       </h1>
 
 
-      <p>
+      <p
+        style={{
+          fontSize:"18px",
+          color:"#555"
+        }}
+      >
         Quality Electrical Products
       </p>
 
 
+
       {error && (
-        <p>
+        <p
+          style={{
+            color:"red"
+          }}
+        >
           {error.message}
         </p>
       )}
+
+
 
 
       <div
         style={{
           display:"grid",
           gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",
-          gap:"25px",
-          marginTop:"30px"
+          gap:"30px",
+          marginTop:"40px"
         }}
       >
 
 
+
       {products?.map((product)=>(
+
 
         <div
           key={product.id}
@@ -58,19 +74,23 @@ export default async function Home() {
             border:"1px solid #eee",
             borderRadius:"20px",
             overflow:"hidden",
-            background:"white",
+            background:"#fff",
             boxShadow:"0 10px 30px rgba(0,0,0,0.08)"
           }}
         >
 
 
+
+          {/* PRODUCT IMAGE */}
+
           <div
             style={{
-              height:"280px",
+              height:"220px",
               display:"flex",
               justifyContent:"center",
               alignItems:"center",
-              background:"#f8f8f8"
+              background:"#f8f8f8",
+              padding:"20px"
             }}
           >
 
@@ -78,10 +98,9 @@ export default async function Home() {
               src={product.image}
               alt={product.name}
               style={{
-                width:"100%",
-                height:"100%",
-                objectFit:"contain",
-                padding:"20px"
+                width:"90%",
+                height:"90%",
+                objectFit:"contain"
               }}
             />
 
@@ -89,26 +108,45 @@ export default async function Home() {
 
 
 
+
+          {/* PRODUCT INFO */}
+
           <div
             style={{
-              padding:"20px"
+              padding:"25px"
             }}
           >
 
-            <h2>
+
+            <h2
+              style={{
+                fontSize:"24px",
+                marginBottom:"12px"
+              }}
+            >
               {product.name}
             </h2>
 
 
-            <p>
+
+            <p
+              style={{
+                color:"#555",
+                fontSize:"16px"
+              }}
+            >
               Brand: {product.brand}
             </p>
+
+
 
 
             <h3
               style={{
                 color:"#e11d48",
-                fontSize:"24px"
+                fontSize:"26px",
+                marginTop:"15px",
+                marginBottom:"20px"
               }}
             >
               {product.price} MMK
@@ -116,20 +154,22 @@ export default async function Home() {
 
 
 
+
             <button
               style={{
                 background:"#111",
                 color:"white",
-                padding:"12px 25px",
-                borderRadius:"10px",
+                padding:"14px",
+                borderRadius:"12px",
                 border:"none",
-                cursor:"pointer",
                 width:"100%",
-                fontSize:"16px"
+                fontSize:"16px",
+                cursor:"pointer"
               }}
             >
               View Product
             </button>
+
 
 
           </div>
@@ -137,7 +177,9 @@ export default async function Home() {
 
         </div>
 
+
       ))}
+
 
 
       </div>
