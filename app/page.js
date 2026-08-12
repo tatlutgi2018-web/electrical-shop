@@ -45,7 +45,7 @@ export default async function Home() {
         style={{
           display:"grid",
          gridTemplateColumns:"repeat(auto-fit,minmax(300px,350px))",
-justifyContent:"center"
+justifyContent:"center",
           gap:"25px",
           marginTop:"30px"
         }}
